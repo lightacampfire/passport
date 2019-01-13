@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Token extends Model
 {
+    protected $connection = 'campfire_oauth';
+
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'oauth_access_tokens';
+    protected $table = 'OauthAccessToken';
 
     /**
      * Indicates if the IDs are auto-incrementing.

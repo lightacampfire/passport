@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
+    protected $connection = 'campfire_oauth';
+    
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'oauth_clients';
+    protected $table = 'OauthClient';
 
     /**
      * The guarded attributes on the model.

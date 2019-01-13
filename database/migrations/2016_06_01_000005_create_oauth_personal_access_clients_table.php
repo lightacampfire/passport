@@ -13,7 +13,7 @@ class CreateOauthPersonalAccessClientsTable extends Migration
      */
     public function up()
     {
-        Schema::create('oauth_personal_access_clients', function (Blueprint $table) {
+        Schema::connection('campfire_oauth')->create('OauthPersonalAccessClient', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('client_id')->index();
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateOauthPersonalAccessClientsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('oauth_personal_access_clients');
+        Schema::connection('campfire_oauth')::dropIfExists('OauthPersonalAccessClient');
     }
 }

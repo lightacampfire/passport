@@ -13,7 +13,7 @@ class CreateOauthRefreshTokensTable extends Migration
      */
     public function up()
     {
-        Schema::create('oauth_refresh_tokens', function (Blueprint $table) {
+        Schema::connection('campfire_oauth')->create('OauthRefreshToken', function (Blueprint $table) {
             $table->string('id', 100)->primary();
             $table->string('access_token_id', 100)->index();
             $table->boolean('revoked');
@@ -28,6 +28,6 @@ class CreateOauthRefreshTokensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('oauth_refresh_tokens');
+        Schema::connection('campfire_oauth')->dropIfExists('OauthRefreshToken');
     }
 }

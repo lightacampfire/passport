@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class AuthCode extends Model
 {
+    protected $connection = 'campfire_oauth';
+    
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'oauth_auth_codes';
+    protected $table = 'OauthAuthCode';
 
     /**
      * Indicates if the IDs are auto-incrementing.
